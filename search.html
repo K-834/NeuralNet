@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NeuralNet - Búsqueda</title>
+    <style>
+        #chat-panel {
+            resize: horizontal;
+            overflow: auto;
+            min-width: 300px;
+            max-width: 50%;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+    <!-- Barra superior -->
+    <div class="flex justify-between items-center bg-gray-800 text-white p-4">
+        <div>
+            <a href="index.html"><h1 class="text-2xl font-bold">NeuralNet - Búsqueda</h1></a>
+        </div>
+        <div>
+            <button id="" class="bg-gray-600 hover:bg-blue-500 px-4 py-2 rounded-lg font-bold">
+                Análisis
+            </button>
+            <button id="chatbot-toggle" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg font-bold">
+                Chatbot
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="flex-grow flex">
+        <!-- Panel de búsqueda -->
+        <div id="search-panel" class="flex flex-col flex-grow p-8">
+            <div class="flex flex-row gap-4 align-middle">
+                <a href="index.html"> <img aria-hidden="true" alt="busqueda" src="assets/icon_search.png"
+                        class="w-12 h-12 rounded-full border-4 border-blue-500" /> </a>
+                <h2 class="text-3xl font-bold mb-6">
+                    Buscar en las diferentes divisiones
+                </h2>
+            </div>
+            <form action="search.html" method="GET" class="flex flex-row gap-4 w-full justify-center h-12">
+                <input type="text" name="query" placeholder="Realizar otra búsqueda..."
+                    class="w-full p-4 text-lg border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-500 py-6" />
+                <button type="submit"
+                    class="bg-blue-600 text-white  hover:bg-blue-600 px-4 rounded-lg shadow-lg transform hover:scale-105">
+                    Buscar
+                </button>
+            </form>
+
+
+            <!-- <div id="filtros-contenedor" class="bg-white p-4 shadow rounded-lg my-4 flex flex-wrap gap-4">
+            </div> -->
+            
+            <div class="relative mt-10">
+                <!-- Checkbox oculto que controla la visibilidad -->
+                <input type="checkbox" id="toggle-filters" class="hidden" />
+              
+                <!-- Botón para alternar el checkbox -->
+                <label for="toggle-filters" class="bg-blue-500 text-white p-2 rounded cursor-pointer mb-2">
+                  Mostrar/Ocultar Filtros
+                </label>
+              
+                <!-- Contenedor de filtros -->
+                <div id="filtros-contenedor" class="bg-white p-4 shadow rounded-lg my-4 flex flex-wrap gap-4 transition-all duration-300">
+                </div>
+              
+                <!-- Estilo CSS para controlar la visibilidad del contenedor -->
+                <style>
+                  /* Cuando el checkbox está marcado, el contenedor se oculta */
+                  #toggle-filters:checked + label + #filtros-contenedor {
+                    display: none;
+                  }
+              
+                  /* Opcional: cambiar el texto del label cuando los filtros están ocultos */
+                  #toggle-filters:checked + label {
+                    background-color: #f87171; /* Color rojo para cuando está marcado */
+                  }
+                </style>
+              </div>
+              
+
+            
+            <!-- Resultados simulados -->
+            <div>
+                <h3 class="text-xl font-semibold mb-2 mt-8">Resultados destacados sobre
+                    <span class="font-bold">
+                        <script>
+                            document.write(new URLSearchParams(window.location.search).get('query') || '...');
+                        </script>
+                    </span>
+                </h3>
+                <ul id="result-list" class="space-y-4"></ul> 
+            </div>
+
+            <button onclick="window.location.href='index.html'"
+                class="mt-8 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-gray-700">
+                Regresar al inicio
+            </button>
+        </div>
+
+        <!-- Panel del chatbot -->
+        <div id="chat-panel" class="hidden bg-gray-200 shadow-inner p-6 border-l border-gray-300">
+            <h2 class="text-xl font-bold mb-4">Chatbot</h2>
+            <div id="chat-box" class="flex flex-col space-y-4 mb-4 h-80 overflow-y-auto">
+                <div class="self-start bg-blue-100 p-3 rounded-lg shadow">
+                    Hola, ¿en qué puedo ayudarte?
+                </div>
+            </div>
+            <input type="text" id="chat-input" placeholder="Escribe un mensaje..."
+                class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-500" />
+            <button id="send-message"
+                class="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-500">
+                Enviar
+            </button>
+        </div>
+    </div>
+
+    <script src="search.js">
+    </script>
+    <script src="datos.js"></script>
+    
+</body>
+
+</html>

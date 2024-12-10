@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NeuralNet</title>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-gray-100">
+    <img aria-hidden="true" alt="busqueda" src="assets/icon_search.png"
+        class="mb-6 w-20 h-20 rounded-full border-4 border-blue-500" />
+    <h1 class="text-4xl font-extrabold mb-6 text-blue-500">
+        NeuralNet - Centro de Operaciones
+    </h1>
+    <form action="search.html" method="GET" class="flex flex-row gap-4 w-3/4 justify-center">
+        <input type="text" name="query" placeholder="Buscar informes o escribir un código de caso..."
+            class="w-3/4 p-3 text-lg border border-gray-700 rounded-lg bg-gray-800 focus:outline-none focus:ring focus:ring-blue-500 placeholder-gray-500" />
+        <button type="submit"
+            class="bg-blue-600 text-white font-bold hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg transform hover:scale-105">
+            Buscar
+        </button>
+    </form>
+    <div class="flex flex-wrap justify-center mt-6 gap-4">
+        <button
+            class="bg-blue-700/50 text-white font-bold hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg transform hover:scale-105">
+            Investigación
+        </button>
+        <button
+            class="bg-blue-700/50 text-white font-bold hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg transform hover:scale-105">
+            Comunicación
+        </button>
+        <button
+            class="bg-blue-700/50 text-white font-bold hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg transform hover:scale-105">
+            Rastreo
+        </button>
+        <button
+            class="bg-blue-700/50 text-white font-bold hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg transform hover:scale-105">
+            Seguridad
+        </button>
+        <button
+            class="bg-blue-700/50 text-white font-bold hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg transform hover:scale-105">
+            Logística
+        </button>
+        <button
+            class="bg-blue-700/50 text-white font-bold hover:bg-blue-600 px-6 py-3 rounded-lg shadow-lg transform hover:scale-105">
+            Emergencia
+        </button>
+    </div>
+</body>
+
+</html>
